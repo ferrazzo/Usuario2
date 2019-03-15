@@ -13,7 +13,11 @@ public class UsuarioBean {
 		return usuario;
 	}
 	public String gravar() {
-		
+		if(this.usuario.getId() == null) {
+			new DAO<Usuario>(Usuario.class).adiciona(this.usuario);
+		}else {
+			System.out.println("Teste usuario asfcdczxa");
+		}
 		return "usuario?faces-redirect=true";
 	}
 }
