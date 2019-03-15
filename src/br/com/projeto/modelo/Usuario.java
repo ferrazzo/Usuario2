@@ -1,37 +1,45 @@
 package br.com.projeto.modelo;
 
-
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-
 
 @Entity
-@WebServlet("/Usuario")
-public class Usuario extends HttpServlet {
+public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
-       
-  
+
 	@Id
-	@GeneratedValue()
-	private Long Id;
-	private String Nome;
-	private String Senha;
-	
+	@GeneratedValue
+	private Long id;
+	private String nome;
+	private String userName;
+	private String senha;
+
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
-	public void setNome(String nome) {
-		Nome = nome;
+
+	public void setNome(String nomeDoUsuario) {
+		nome = nomeDoUsuario;
 	}
+
 	public String getSenha() {
-		return Senha;
-	}
-	public void setSenha(String senha) {
-		Senha = senha;
+		return senha;
 	}
 
+	public void setSenha(String senhaDoUsuario) {
+		senha = senhaDoUsuario;
+	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 }
