@@ -1,6 +1,7 @@
 package br.com.projeto.bean;
 
 
+import br.com.projeto.dao.DAO;
 import br.com.projeto.modelo.Usuario;
 
 public class LoginBean {
@@ -10,6 +11,10 @@ public class LoginBean {
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
+	
+	public void acessar() {
+			new DAO<Usuario>(Usuario.class).efetuaLogin(this.usuario);
+		
+	}
 	
 }

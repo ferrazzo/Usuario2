@@ -1,8 +1,8 @@
 package br.com.projeto.bean;
 
+import javax.faces.bean.ManagedBean;
 import br.com.projeto.dao.DAO;
 import br.com.projeto.modelo.Usuario;
-import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class UsuarioBean {
@@ -12,12 +12,28 @@ public class UsuarioBean {
 	public Usuario getUsuario() {
 		return usuario;
 	}
+
 	public String gravar() {
-		if(this.usuario.getId() == null) {
+		if (this.usuario.getId() == null && !this.usuario.getNome().isEmpty() && !this.usuario.getUserName().isEmpty()
+				&& !this.usuario.getSenha().isEmpty()) {
 			new DAO<Usuario>(Usuario.class).adiciona(this.usuario);
-		}else {
+		} else {
 			System.out.println("Teste usuario asfcdczxa");
 		}
 		return "usuario?faces-redirect=true";
+	}
+
+	public String voltar() {
+
+		return "usuario?faces-redirect=true";
+	}
+	public void pesquisaUsuario(String nome) {
+		if (nome.equals(this.usuario.getNome())) {
+
+		}
+	}
+	public String criarUsuario() {
+		
+		return "cadastroUsuario?faces-redirect=true";
 	}
 }

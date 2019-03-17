@@ -11,7 +11,7 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long usuario_id;
 	private String nome;
 	private String userName;
 	private String senha;
@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
 	}
 
 	public Long getId() {
-		return id;
+		return usuario_id;
 	}
 
 	public String getUserName() {

@@ -7,7 +7,21 @@
 
 	<title>Usuarios</title>
 </h:head>
-<h:body>
+	<h:body>
+		<h1>Lista de Usuário</h1>
+		<h:form>
+		<fieldset>
+			<legend>Usuários</legend>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome Completo:" for="nome" />
+				<h:inputText id="nome" value="#{usuarioBean.usuario.nome}" />
 
-</h:body>
+				<h:outputLabel value="Nome de Usuario:" for="userName" />
+				<h:inputText id="userName" value="#{usuarioBean.usuario.userName}" />
+				
+				<h:commandButton value="Criar Usuario"  />
+			</h:panelGrid>
+		</fieldset>
+	</h:form>
+	</h:body>
 </html>

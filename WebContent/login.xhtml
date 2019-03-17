@@ -6,17 +6,14 @@
 
 <h:head>
 
-	<title>Cadastro de Usuário</title>
+	<title>Login</title>
 </h:head>
-
 <h:body>
-	<h1>Cadastro de usuários</h1>
+	<h1>Login</h1>
 	<h:form>
 		<fieldset>
-			<legend>Dados do Usuário</legend>
+			<legend>Dados de Acesso</legend>
 			<h:panelGrid columns="2">
-				<h:outputLabel value="Nome Completo:" for="nome" />
-				<h:inputText id="nome" value="#{usuarioBean.usuario.nome}" />
 
 				<h:outputLabel value="Nome de Usuario:" for="userName" />
 				<h:inputText id="userName" value="#{usuarioBean.usuario.userName}" />
@@ -25,8 +22,7 @@
 				<h:inputText id="senha" value="#{usuarioBean.usuario.senha}">
 					<f:passThroghAttribute name="type" value="password" />
 				</h:inputText>
-				<h:commandButton value="Voltar" action="#{usuarioBean.voltar}"/>
-				<h:commandButton value="Gravar" action="#{usuarioBean.gravar}" />
+				<h:commandButton value="Acessar" action="#{loginBean.acessar}"/>
 			</h:panelGrid>
 		</fieldset>
 	</h:form>

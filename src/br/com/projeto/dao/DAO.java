@@ -12,14 +12,34 @@ public class DAO<T> {
 
 	public void adiciona(T t) {
 		EntityManager em = new JPAUtil().getEntityManager();
+
+		em.getTransaction().begin();
+
+		em.persist(t);
+
+		em.getTransaction().commit();
+
+		em.close();
+	}
+
+	public void buscaUsuario(T t) {
+		EntityManager em = new JPAUtil().getEntityManager();
+
+		em.getTransaction().begin();
+
+		em.persist(t);
+
+		em.getTransaction().commit();
+
+		em.close();
+	}
+	public void efetuaLogin(T t) {
+		EntityManager em = new JPAUtil().getEntityManager();
 		
 		em.getTransaction().begin();
 		
-		em.persist(t);
 		
-		em.getTransaction().commit();
 		
-		em.close();
 	}
 
 }
