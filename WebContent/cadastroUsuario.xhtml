@@ -2,15 +2,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
+<ui:composition template="_template.xhtml">
 
-	<title>Cadastro de Usuário</title>
-</h:head>
-
-<h:body>
-	<h1>Cadastro de usuários</h1>
+	<ui:define name="titulo">
+			Cadastro de Usuário
+		</ui:define>
+	<ui:define name="conteudo">
 	<h:form>
 		<fieldset>
 			<legend>Dados do Usuário</legend>
@@ -30,5 +30,6 @@
 			</h:panelGrid>
 		</fieldset>
 	</h:form>
-</h:body>
+</ui:define>
+</ui:composition>
 </html>

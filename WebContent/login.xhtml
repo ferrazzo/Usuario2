@@ -2,29 +2,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
+<ui:composition template="_template.xhtml">
 
-	<title>Login</title>
-</h:head>
-<h:body>
-	<h1>Login</h1>
-	<h:form>
-		<fieldset>
-			<legend>Dados de Acesso</legend>
-			<h:panelGrid columns="2">
+	<ui:define name="titulo">
+			Login
+		</ui:define>
+	<ui:define name="conteudo">
+		<h:form>
+			<fieldset>
+				<legend>Dados de Acesso</legend>
+				<h:panelGrid columns="2">
 
-				<h:outputLabel value="Nome de Usuario:" for="userName" />
-				<h:inputText id="userName" value="#{usuarioBean.usuario.userName}" />
+					<h:outputLabel value="Nome de Usuario:" for="userName" />
+					<h:inputText id="userName" value="#{loginBean.usuario.userName}" required="true" />
 
-				<h:outputLabel value="Senha:" for="senha" />
-				<h:inputText id="senha" value="#{usuarioBean.usuario.senha}">
-					<f:passThroghAttribute name="type" value="password" />
-				</h:inputText>
-				<h:commandButton value="Acessar" action="#{loginBean.acessar}"/>
-			</h:panelGrid>
-		</fieldset>
-	</h:form>
-</h:body>
+					<h:outputLabel value="Senha:" for="senha" />
+					<h:inputText id="senha" value="#{loginBean.usuario.senha}" required="true">
+						<f:passThroghAttribute name="type" value="password" />
+					</h:inputText>
+					<h:commandButton value="Acessar" action="#{loginBean.efetuaLogin}" />
+				</h:panelGrid>
+			</fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
 </html>

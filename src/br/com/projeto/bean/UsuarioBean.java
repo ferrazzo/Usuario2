@@ -27,10 +27,14 @@ public class UsuarioBean {
 
 		return "usuario?faces-redirect=true";
 	}
-	public void pesquisaUsuario(String nome) {
-		if (nome.equals(this.usuario.getNome())) {
-
+	public void pesquisaUsuario() {
+		
+		boolean pesquisa = new DAO<Usuario>(Usuario.class).listaUsuarios(this.usuario);
+		
+		if(this.usuario.getNome().equals(pesquisa)) {
+			 this.usuario.getUserName();
 		}
+		
 	}
 	public String criarUsuario() {
 		
